@@ -13,7 +13,7 @@ Repository for creating set of services for scrapping msc.com for getting contai
 # Testing:
 		Once the containers are up, check http://localhost:8080 for list of container/BOL being scrapped.
 		http://localhost:8080/request/{contORBol}
-		The fast service and the scrapy bases scripts starts 30s after the containers are up.
+		The fast service and the scrapy based scripts starts 30s after the containers are up.
 
 
 * The list of container/BOL can be updated in the create_fixtures.sh script.
