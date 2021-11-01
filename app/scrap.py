@@ -111,7 +111,7 @@ class BilloflandingSpider(scrapy.Spider):
                             type = %s, finalpod = %s, shippedto = %s, pcd = %s, movement = %s;"""
                 
                 cur.execute(ins_query,(self.bofl,cd['type'],cd['finalpod'],cd['shippedto'],cd['pcd'],json.dumps(cmd),cd['type'],cd['finalpod'],cd['shippedto'],cd['pcd'],json.dumps(cmd)))
-                con.commit()
+                #con.commit()
                 cur.execute("insert into req_type (id, type) values (%s,%s) on conflict(id) do nothing",(self.bofl,"CONT"))
                 con.commit()
             else:
@@ -126,7 +126,7 @@ class BilloflandingSpider(scrapy.Spider):
             ins_query = """insert into bol (bid, depdate, vessel, pol, pod, transhipment, pcd, containers) values (%s,%s,%s,%s,%s,%s,%s,%s) on conflict (bid) do update set
                         depdate = %s, vessel = %s, pol = %s, pod = %s, transhipment = %s, pcd = %s, containers = %s;"""
             cur.execute(ins_query,(self.bofl,bcd['Departure_Date'],bcd['Vessel'],bcd['pol'],bcd['pod'],bcd['transhipment'],bcd['pcd'],json.dumps(bcd),bcd['Departure_Date'],bcd['Vessel'],bcd['pol'],bcd['pod'],bcd['transhipment'],bcd['pcd'],json.dumps(bcd)))
-            con.commit()
+            #con.commit()
             cur.execute("insert into req_type (id, type) values (%s,%s) on conflict(id) do nothing;",(self.bofl,"BOL"))
             con.commit()
             
