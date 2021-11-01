@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  db:
+    build: ./database/
+  app :
+    build: ./app/
+  fast :
+    build: ./apiapp/
+    ports:
+      - "8080:8080"
+  
