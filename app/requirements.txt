@@ -1,0 +1,4 @@
+scrapy
+prefect
+psycopg2-binary
+ 
