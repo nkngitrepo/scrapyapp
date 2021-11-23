@@ -14,7 +14,7 @@ def sam():
 if __name__ == '__main__':
     schedule = IntervalSchedule(
     start_date=datetime.utcnow() + timedelta(seconds=30),
-    interval=timedelta(minutes=5),
+    interval=timedelta(minutes=1),
 )
     with Flow("Sam", schedule=schedule) as flow:
         sam()
