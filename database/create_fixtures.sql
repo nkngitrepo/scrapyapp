@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS container (
     cid char(50) primary key not null,
 	type char(100),
 	finalpod char(100),
+	finalpodeta char(100),
 	shippedto char(100),
 	pcd       char(100),
 	movement json
